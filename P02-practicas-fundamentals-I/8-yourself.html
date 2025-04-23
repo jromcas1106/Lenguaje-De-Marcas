@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My JavaScript Contact</title>
+  <style>
+    body  {
+      font-family: sans-serif;
+    }
+
+    p {
+      margin-bottom: 20px;
+      color:black ;
+    }
+
+    button {
+      margin-right: 10px;
+      padding: 8px 15px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>First Javascript contact</h1>
+  <p id="paragraph">This is the initial text.</p>
+
+  <button id="button1">Hello World</button>
+  <button id="button2">Goodbye World</button>
+  <button id="button3">Bold</button>
+  <button id="button4">Italic</button>
+  <button id="button5">Change Color</button>
+
+  <script>
+
+    // A button that, when clicked, changes the text of the paragraph <p> to "Hello World".
+    const paragraph = document.getElementById("paragraph");
+    const button1 = document.getElementById("button1");
+
+    button1.addEventListener("click", function(){
+       paragraph.textContent = "Hello world";
+    });
+
+    // A button that, when clicked, changes the text of the paragraph < p > to "Goodbye World".
+    const button2 = document.getElementById("button2");
+
+    button2.addEventListener("click", function (){
+      paragraph.textContent = " Goodbye World";
+    });
+
+
+    // A button that, when clicked, change the text style to bold.
+
+    const button3 = document.getElementById("button3");
+
+    button3.addEventListener("click", function () {
+       paragraph.style.fontWeight = "bold";
+    });
+
+    // A button that, when clicked, change the text style to italic.
+    const button4 = document.getElementById ("button4");
+    
+    button4.addEventListener("click", function(){
+      paragraph.style.fontStyle = "italic";
+    });
+
+    // A button that, when clicked, change the color of the text to red, when it is clicked again set the color back to the initial color.
+    const button5 = document.getElementById("button5");
+
+    button5.addEventListener("click", function() {
+      if (paragraph.style.color === "black") {
+        paragraph.style.color = "red";
+      } else {
+        paragraph.style.color = "black";  // Corrected the typo here
+      }
+    });
+
+  </script>
+
+</body>
+
+</html>
