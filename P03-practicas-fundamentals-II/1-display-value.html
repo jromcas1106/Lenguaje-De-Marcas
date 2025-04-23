@@ -1,0 +1,23 @@
+<input type="text" id="myInput" placeholder="Escribe algo aquí">
+<button id="showValueButton">Mostrar valor</button>
+<button id="showInH1Button">Mostrar en H1</button>
+<p id="inputValue"></p>
+<h1 id="inputValueH1"></h1>
+
+<script>
+  const input = document.getElementById("myInput");
+  const button = document.getElementById("showValueButton");
+  const display = document.getElementById("inputValue");
+
+  button.addEventListener("click", function () {
+    display.textContent = input.value;
+  });
+
+  //TODO: Add a second button to display the input value in a h1 elements
+  const h1Button = document.getElementById("showInH1Button");
+  const h1Display = document.getElementById("inputValueH1");
+
+  h1Button.addEventListener("click", function () {
+    h1Display.textContent = input.value;
+  });
+</script>
