@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Acerca del Proyecto</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="light-theme">
+
+  <!-- Menú -->
+  <header class="bg-primary text-white p-3">
+    <nav class="container d-flex justify-content-between align-items-center">
+      <h1 class="h3">InfoTiempo</h1>
+      <ul class="nav">
+        <li class="nav-item"><a href="index.html" class="nav-link text-white">Inicio</a></li>
+        <li class="nav-item"><a href="clima.html" class="nav-link text-white">Clima</a></li>
+        <li class="nav-item"><a href="noticias.html" class="nav-link text-white">Noticias</a></li>
+        <li class="nav-item"><a href="acerca.html" class="nav-link text-white">Acerca</a></li>
+        <li class="nav-item"><a href="contacto.html" class="nav-link text-white">Contacto</a></li>
+      </ul>
+      <button id="toggleTheme" class="btn btn-light">Modo oscuro</button>
+    </nav>
+  </header>
+
+  <main class="container my-5">
+    <section>
+      <h2>Acerca del Proyecto</h2>
+      <p>
+        InfoTiempo es una aplicación web que permite a los usuarios consultar el estado del clima actual
+        y las previsiones meteorológicas por horas y días, así como mantenerse informados con las noticias más recientes de España.
+      </p>
+    </section>
+
+    <section class="mt-4">
+      <h3>Objetivos del Desarrollo</h3>
+      <ul>
+        <li>Mostrar el estado del tiempo actual y futuro de forma clara y sencilla.</li>
+        <li>Ofrecer una interfaz adaptable a móviles y escritorio.</li>
+        <li>Permitir el cambio de tema claro/oscuro.</li>
+        <li>Informar al usuario con noticias relevantes nacionales.</li>
+      </ul>
+    </section>
+
+    <section class="mt-4">
+      <h3>Tecnologías Empleadas</h3>
+      <ul>
+        <li>HTML5 semántico</li>
+        <li>CSS3 con Flexbox y Grid</li>
+        <li>Bootstrap 5</li>
+        <li>JavaScript puro (sin frameworks)</li>
+      </ul>
+    </section>
+
+    <section class="mt-4">
+      <h3>Autor</h3>
+      <p>Desarrollado por: <strong>Javier Romero</strong></p>
+    </section>
+  </main>
+
+  <footer class="text-center text-muted py-3 bg-light">
+    <small>&copy; 2025 InfoTiempo</small>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Tema claro/oscuro
+    document.getElementById("toggleTheme").addEventListener("click", () => {
+      const body = document.body;
+      body.classList.toggle("light-theme");
+      body.classList.toggle("dark-theme");
+      document.getElementById("toggleTheme").textContent =
+        body.classList.contains("light-theme") ? "Modo oscuro" : "Modo claro";
+    });
+  </script>
+
+  <style>
+    .light-theme {
+      background-color: #fff;
+      color: #000;
+    }
+
+    .dark-theme {
+      background-color: #121212;
+      color: #eee;
+    }
+
+    /* Error intencional: clase escrita con typo, no usada */
+    .contenedor-grnade {
+      margi-top: 2rem;
+    }
+  </style>
+</body>
+</html>
