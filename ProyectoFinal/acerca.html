@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Acerca - ClimaApp</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">WheaterApp</a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="clima.html">Clima</a></li>
+          <li class="nav-item"><a class="nav-link" href="noticias.html">Noticias</a></li>
+          <li class="nav-item"><a class="nav-link" href="acerca.html">Acerca</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+          <button class="btn btn-outline-light ms-3" onclick="cambiarModoOscuro()">Modo Claro/Oscuro</button>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-5 pt-5">
+    <h1>Acerca del Proyecto</h1>
+    <hr />
+
+    <section class="mb-4">
+      <h2>Descripción General</h2>
+      <p>
+        WheatherApp es una aplicación web diseñada para mostrar información meteorológica actualizada y noticias relacionadas, con un diseño intuitivo y responsivo.
+      </p>
+    </section>
+
+    <section class="mb-4">
+      <h2>Objetivos del Desarrollo</h2>
+      <ul>
+        <li>Proporcionar datos meteorológicos precisos y accesibles.</li>
+        <li>Mostrar noticias nacionales relevantes y actuales.</li>
+        <li>Ofrecer una experiencia de usuario sencilla con modo claro y oscuro.</li>
+        <li>Permitir consultar el clima en diferentes ciudades mediante selección dinámica.</li>
+      </ul>
+    </section>
+
+    <section class="mb-4">
+      <h2>APIs Utilizadas</h2>
+      <ul>
+        <li><strong>WeatherAPI:</strong> para obtener datos meteorológicos en tiempo real.</li>
+      </ul>
+    </section>
+
+    <section class="mb-4">
+      <h2>Tecnologías Empleadas</h2>
+      <ul>
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>Bootstrap 5</li>
+        <li>JavaScript</li>
+      </ul>
+    </section>
+
+    <section class="mb-4">
+      <h2>Autor del Proyecto</h2>
+      <p>Javier Romero Castillo</p>
+    </section>
+  </div>
+
+  <script>
+    // Aplicar modo oscuro si está activado en localStorage
+    window.onload = function () {
+      if (localStorage.getItem("modoOscuro") === "true") {
+        document.body.classList.add("modo-oscuro");
+      }
+    };
+
+    function cambiarModoOscuro() {
+      document.body.classList.toggle("modo-oscuro");
+      const modoOscuroActivado = document.body.classList.contains("modo-oscuro");
+      localStorage.setItem("modoOscuro", modoOscuroActivado);
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Clima por Ciudad</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">WheatherApp</a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="clima.html">Clima</a></li>
+        <li class="nav-item"><a class="nav-link" href="noticias.html">Noticias</a></li>
+        <li class="nav-item"><a class="nav-link" href="acerca.html">Acerca</a></li>
+        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+        <button class="btn btn-outline-light ms-3" onclick="cambiarModoOscuro()">Modo Claro/Oscuro</button>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container" style="margin-top: 100px;">
+  <h1>Consulta el Clima</h1>
+
+  <div class="mb-4">
+    <label for="selector-ciudad" class="form-label">Selecciona una ciudad:</label>
+    <select class="form-select" id="selector-ciudad">
+      <option value="Madrid">Madrid</option>
+      <option value="Barcelona">Barcelona</option>
+      <option value="Sevilla">Sevilla</option>
+      <option value="Valencia">Valencia</option>
+    </select>
+  </div>
+
+  <h2>Hoy</h2>
+  <div class="row" id="datos-hoy">
+    <!-- Clima por horas -->
+  </div>
+
+  <h2 class="mt-5">Previsión Próximos 5 Días</h2>
+  <div class="row" id="proximos-dias">
+    <!-- Clima por día -->
+  </div>
+
+  <h3 class="mt-5">Alertas Meteorológicas</h3>
+  <div id="alertas">
+    <!-- Alertas meteorologicas -->
+    <p>No hay alertas meteorológicas para esta ubicación.</p>
+  </div>
+</div>
+
+<script>
+  // Aplicar modo oscuro si está activado en localStorage
+  window.onload = function () {
+    if (localStorage.getItem("modoOscuro") === "true") {
+      document.body.classList.add("modo-oscuro");
+    }
+  };
+
+  function cambiarModoOscuro() {
+    document.body.classList.toggle("modo-oscuro");
+    const modoOscuroActivado = document.body.classList.contains("modo-oscuro");
+    localStorage.setItem("modoOscuro", modoOscuroActivado);
+  }
+</script>
+
+<!-- Tu script dinámico de clima -->
+<script src="js/clima.js"></script>
+
+</body>
+</html>
